@@ -25,7 +25,7 @@ RUN apk --update add apache2 php-apache2   && \
 ADD index.html /var/www/localhost/htdocs/index.html
 
 #Setting Page Title
-RUN sed -i "s/PAGETITLE/${Title}/g" /var/www/localhost/htdocs/index.html
+CMD sed -i "s/PAGETITLE/${Title}/g" /var/www/localhost/htdocs/index.html
 
 # Listen to required ports
 EXPOSE 80
