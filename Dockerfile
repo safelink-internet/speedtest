@@ -23,7 +23,7 @@ RUN apk --update add apache2 php-apache2   && \
 ADD index.html /var/www/localhost/htdocs/index.html
 
 #Setting Page Title
-RUN sed -i 's/PAGETITLE/"${Title:-Speedtest}/' /var/www/localhost/htdocs/index.html
+RUN sed -i "s/PAGETITLE/${Title:-Speedtest}/g" /var/www/localhost/htdocs/index.html
 
 # Listen to required ports
 EXPOSE 80
