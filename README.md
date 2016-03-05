@@ -47,5 +47,5 @@ Upgrading the application inside the Docker image is easy.  Just pull the image 
 docker pull safelinkinternet/speedtest
 docker stop speedtest
 docker rm speedtest
-docker run --restart=unless-stopped --name=speedtest -d -p 80:80 safelinkinternet/speedtest
+docker run --restart=unless-stopped --name=speedtest -e Title="My Title" -d -p 80:80 safelinkinternet/speedtest
 ```
