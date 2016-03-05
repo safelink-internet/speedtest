@@ -2,6 +2,8 @@ FROM alpine:latest
 
 MAINTAINER Safelink Internet
 
+ENV Title Speedtest
+
 RUN apk --update add apache2 php-apache2   && \
     rm -rf /var/lib/apt/lists/*   && \
     rm -rf /var/cache/apk/*   && \
@@ -23,7 +25,7 @@ RUN apk --update add apache2 php-apache2   && \
 ADD index.html /var/www/localhost/htdocs/index.html
 
 #Setting Page Title
-RUN sed -i "s/PAGETITLE/${Title:-Speedtest}/g" /var/www/localhost/htdocs/index.html
+RUN sed -i "s/PAGETITLE/${Title}/g" /var/www/localhost/htdocs/index.html
 
 # Listen to required ports
 EXPOSE 80
