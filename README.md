@@ -21,12 +21,9 @@ ________________________________________
 ### Running the image
 In order to start the speedtest container, use the following:
 ```sh
-docker run --restart=unless-stopped --name=speedtest -e Title="My Title" -d -p 80:80 safelinkinternet/speedtest
+docker run --restart=unless-stopped --name=speedtest -d -p 80:80 safelinkinternet/speedtest
 ```
 
-You can set your own page title or keep the default page title of `Speedtest`.  Specify your title by setting an environment variable called `Title`, e.g.:
-
-`-e Title="My Title"`
 
 You can also use a different port if you want.  You can keep the default built-in ports inside the container and just map them to different ports on the host, e.g.:
 
@@ -47,5 +44,5 @@ Upgrading the application inside the Docker image is easy.  Just pull the image 
 docker pull safelinkinternet/speedtest
 docker stop speedtest
 docker rm speedtest
-docker run --restart=unless-stopped --name=speedtest -e Title="My Title" -d -p 80:80 safelinkinternet/speedtest
+docker run --restart=unless-stopped --name=speedtest -d -p 80:80 safelinkinternet/speedtest
 ```

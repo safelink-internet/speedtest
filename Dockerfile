@@ -23,10 +23,6 @@ RUN apk --update add apache2 php-apache2   && \
 
 #Adding Custom files
 ADD index.html /var/www/localhost/htdocs/index.html
-ADD set-title.sh /tmp/set-title.sh
-
-#Setting Page Title
-CMD /tmp/set-title.sh
 
 # Listen to required ports
 EXPOSE 80
