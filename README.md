@@ -1,29 +1,15 @@
 [![Docker Stars](https://img.shields.io/docker/stars/safelinkinternet/speedtest.svg)](https://hub.docker.com/r/safelinkinternet/speedtest/) [![Docker Pulls](https://img.shields.io/docker/pulls/safelinkinternet/speedtest.svg)](https://hub.docker.com/r/safelinkinternet/speedtest/)
 
-# docker: speedtest
-
-This is a Docker image to run Apache2 and Ookla's [Speedtest Mini](http://www.speedtest.net/fr/mini.php) application for benchmarking network performance.
-
-[![Speedtest Mini](http://www.speedtest.net/images/speedtestmini.png)](http://www.speedtest.net/fr/mini.php)
-
-
+# Speedtest-mini on Alpine
 Total size of this image is:
-
 [![ImageLayers](https://badge.imagelayers.io/safelinkinternet/speedtest:latest.svg)](https://imagelayers.io/?images=safelinkinternet/speedtest:latest)
 
-________________________________________
-### Pulling from Docker hub
-If you want to obtain the image from Docker registry, you can use the following command:
-```sh
-docker pull safelinkinternet/speedtest
-```
-________________________________________
-### Running the image
-In order to start the speedtest container, use the following:
+### Running
+Use this command to start the container. Speedtest will listen on port 80.
+
 ```sh
 docker run --restart=unless-stopped --name=speedtest -d -p 80:80 safelinkinternet/speedtest
 ```
-
 
 You can also use a different port if you want.  You can keep the default built-in ports inside the container and just map them to different ports on the host, e.g.:
 
