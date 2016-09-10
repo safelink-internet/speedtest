@@ -19,7 +19,9 @@ RUN apk --update add apache2 php-apache2   && \
     rm -f /tmp/mini/index-*.html   && \
      # Make sure default website dir is empty before moving files   && \
     rm -rf /var/www/localhost/htdocs/*   && \
-    mv /tmp/mini/* /var/www/localhost/htdocs/
+    mv /tmp/mini/* /var/www/localhost/htdocs/   && \
+	adduser -S speedtest && \
+    chown -R speedtest /var/www/localhost/htdocs/
 
 #Adding Custom files
 ADD index.html /var/www/localhost/htdocs/index.html
